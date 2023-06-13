@@ -16,7 +16,9 @@ function App() {
     <div className="app">
       <div className="app__row">
         <button onClick={() => setIsDark(false)}>light</button>
-        <button onClick={() => setIsDark(true)}>dark</button>
+        <button className="secondary" onClick={() => setIsDark(true)}>
+          dark
+        </button>
       </div>
       <div className="app__row">
         <button className="small" onClick={() => setFontSize((prev) => prev - 1)}>
