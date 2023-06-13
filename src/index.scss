@@ -1,0 +1,61 @@
+@use './styles/reset.scss';
+
+:root {
+  --color-primary: #1890ff;
+  --color-on-primary: #fff;
+  --color-primary-container: #f0f2f5;
+  --color-on-primary-container: #000;
+
+  --color-secondary: #f0f2f5;
+  --color-on-secondary: #000;
+  --color-secondary-container: #fff;
+  --color-on-secondary-container: #000;
+
+  --font-size-base: 16px;
+
+  --button-margin: 0.5em;
+  --button-padding: 0.5em 1em;
+  --button-border-radius: 0.25em;
+  --button-border-width: 0.0625em;
+  --button-font-size: 1em;
+  --button-font-weight: 400;
+  --button-line-height: 1.5;
+  --button-letter-spacing: 0.00938em;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+#root {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+
+  font-size: calc(var(--button-font-size) * var(--font-scale, 1));
+
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  border: var(--button-border-width) solid var(--color-primary);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  letter-spacing: var(--button-letter-spacing);
+
+  &:hover {
+    background-color: var(--color-on-primary);
+    color: var(--color-primary);
+  }
+
+  &.small {
+    --font-scale: 0.75;
+  }
+  &.large {
+    --font-scale: 1.25;
+  }
+}

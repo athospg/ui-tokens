@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { applyTheme } from './utils/theme.utils';
+
+const DEFAULT_FONT_SIZE = 16;
 
 function App() {
+  const [isDark, setIsDark] = React.useState(false);
+  const [fontSize, setFontSize] = React.useState(DEFAULT_FONT_SIZE);
+
+  React.useEffect(() => {
+    applyTheme(isDark, fontSize);
+  }, [isDark, fontSize]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app__row">
+        <button onClick={() => setIsDark(false)}>light</button>
+        <button onClick={() => setIsDark(true)}>dark</button>
+      </div>
+      <div className="app__row">
+        <button className="small" onClick={() => setFontSize((prev) => prev - 1)}>
+          - font
+        </button>
+        <button onClick={() => setFontSize(DEFAULT_FONT_SIZE)}>reset font</button>
+        <button className="large" onClick={() => setFontSize((prev) => prev + 1)}>
+          + font
+        </button>
+      </div>
     </div>
   );
 }
