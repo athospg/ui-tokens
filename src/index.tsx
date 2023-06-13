@@ -4,7 +4,9 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement,
+);
 if (root === null) {
   throw new Error('Root element not found');
 }

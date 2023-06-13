@@ -9,7 +9,11 @@ export function applyTheme(isDark = true, size = 16): void {
   document.adoptedStyleSheets = [sheet];
 }
 
-function createCSSStyleSheet(isDark: boolean, size: number, elementName: string) {
+function createCSSStyleSheet(
+  isDark: boolean,
+  size: number,
+  elementName: string,
+) {
   return isDark
     ? `${elementName} {
   --font-size-base: ${size}px;

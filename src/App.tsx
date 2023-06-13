@@ -21,11 +21,19 @@ function App() {
         </button>
       </div>
       <div className="app__row">
-        <button className="small" onClick={() => setFontSize((prev) => prev - 1)}>
+        <button
+          className="small"
+          onClick={() => setFontSize((prev) => prev - 1)}
+        >
           - font
         </button>
-        <button onClick={() => setFontSize(DEFAULT_FONT_SIZE)}>reset font</button>
-        <button className="large" onClick={() => setFontSize((prev) => prev + 1)}>
+        <button onClick={() => setFontSize(DEFAULT_FONT_SIZE)}>
+          reset font
+        </button>
+        <button
+          className="large"
+          onClick={() => setFontSize((prev) => prev + 1)}
+        >
           + font
         </button>
       </div>
